@@ -33,6 +33,7 @@ public class StringMethods {
 	// Given Strings s1 and s2, return the longer String
 	public static String longerString(String s1, String s2) {
 		if(s1.length() > s2.length()) return s1;
+		System.out.println(5 + 3 + "13");
 		return s2;
 	}
 
@@ -76,12 +77,11 @@ public class StringMethods {
 	// Return the number of times String substring appears in String s
 	public static int substringCount(String s, String substring) {
 		int times = 0;
-		int index = 0;
-		while(index >= 0) {
+		int index = -1;
+		do {
 			times++;
 			index = s.indexOf(substring, index + 1);
-			System.out.println("fdfdfdferer");
-		}
+		}while(index >= 0);
 		return times - 1;
 	}
 
@@ -102,11 +102,10 @@ public class StringMethods {
 		String[] arr = s.split(" ");
 		int count = 0;
 		for(String str: arr) {
-			if(str.length() >= substring.length() && str.contains(substring) && str.substring(str.indexOf(substring)).equals(substring)) {
+			if(str.length() >= substring.length() && str.contains(substring) && str.substring(str.lastIndexOf(substring)).equals(substring)) {
 				count++;
 			}
 		}
-		
 		return count;
 	}
 	
